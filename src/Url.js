@@ -1,5 +1,5 @@
 import React from 'react';
-import REACT_APP_API_KEY from './js/apikey';
+import REACT_APP_API_KEY from './apikey';
 import Items from './Items';
 
 // Setup initial states
