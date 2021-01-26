@@ -13,7 +13,7 @@ import thunk from 'redux-thunk';
 const middleware = [thunk];
 const store = createStore(
   combineReducers({
-    urlState: UrlReducer,
+    productState: UrlReducer,
   }),
   composeWithDevTools(applyMiddleware(...middleware))
 );
