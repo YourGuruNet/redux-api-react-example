@@ -15,13 +15,16 @@ export const setLoading = () => {
 export const getProducts = () => {
   return async function (dispatch) {
     dispatch(setLoading());
-    const response = await fetch(`https://${process.env.REACT_APP_API_KEY}`, {
-      method: 'GET',
-      headers: {
-        'x-rapidapi-key': '46c53b5e75msh8b1584cc59252d3p188b3ajsn83eab7e8b183',
-        'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
-      },
-    });
+    const response = await fetch(
+      'https://weatherapi-com.p.rapidapi.com/forecast.json?q=Jurmala&days=3',
+      {
+        method: 'GET',
+        headers: {
+          'x-rapidapi-key': `${process.env.REACT_APP_API_KEY}`,
+          'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
+        },
+      }
+    );
 
     const data = await response.json();
     dispatch({ type: GET_PRODUCTS, payload: data });
