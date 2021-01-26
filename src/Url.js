@@ -1,5 +1,7 @@
 import React from 'react';
+import REACT_APP_API_KEY from './apikey';
 import Items from './Items';
+
 // Setup initial states
 const defaultState = {
   loading: true,
@@ -20,7 +22,7 @@ export const getProducts = () => {
       {
         method: 'GET',
         headers: {
-          'x-rapidapi-key': `${process.env.REACT_APP_API_KEY}`,
+          'x-rapidapi-key': REACT_APP_API_KEY,
           'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
         },
       }
